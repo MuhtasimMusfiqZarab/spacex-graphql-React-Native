@@ -2,6 +2,7 @@ import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import {SvgXml} from 'react-native-svg';
 import {CharacterIcon, EpisodeIcon, LocationIcon} from '../_icons';
@@ -15,6 +16,7 @@ import LocationScreen from './location';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const EpisodesStack = () => {
   return (
@@ -74,7 +76,7 @@ const LocationsStack = () => {
   );
 };
 
-export default function IndexScreen() {
+const CapsulesScreen = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
@@ -108,5 +110,15 @@ export default function IndexScreen() {
         }}
       />
     </Tab.Navigator>
+  );
+};
+
+export default function IndexScreen() {
+  return (
+    <Drawer.Navigator initialRouteName="Episode">
+      <Drawer.Screen name="Capsules" component={CapsulesScreen} />
+      <Drawer.Screen name="Cores" component={CharactersStack} />
+      <Drawer.Screen name="Launches" component={LocationsStack} />
+    </Drawer.Navigator>
   );
 }

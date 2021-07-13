@@ -17,6 +17,6 @@ const App = () => {
     </ApolloProvider>
   );
 };
-AppRegistry.registerComponent('rickandmorty', () => App);
+AppRegistry.registerComponent('spacex', () => App);
 
 export default App;
