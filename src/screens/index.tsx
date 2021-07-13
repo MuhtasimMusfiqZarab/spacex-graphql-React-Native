@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import {SvgXml} from 'react-native-svg';
-import {CharacterIcon, EpisodeIcon, LocationIcon} from '../_icons';
+import {TrendingIcon, PastIcon, UpcomingIcon} from '../_icons';
 
 import EpisodesScreen from './episodes';
 import EpisodeScreen from './episode';
@@ -83,9 +83,9 @@ const CapsulesScreen = () => {
         name="Episodes"
         component={EpisodesStack}
         options={{
-          tabBarLabel: 'Episodes',
+          tabBarLabel: 'Past',
           tabBarIcon: ({color}) => (
-            <SvgXml xml={EpisodeIcon} width="100%" height="100%" />
+            <SvgXml xml={PastIcon} width="100%" height="80%" />
           ),
         }}
       />
@@ -93,9 +93,9 @@ const CapsulesScreen = () => {
         name="Characters"
         component={CharactersStack}
         options={{
-          tabBarLabel: 'Characters',
+          tabBarLabel: 'Trending',
           tabBarIcon: ({color}) => (
-            <SvgXml xml={CharacterIcon} width="100%" height="80%" />
+            <SvgXml xml={TrendingIcon} width="100%" height="80%" />
           ),
         }}
       />
@@ -103,9 +103,9 @@ const CapsulesScreen = () => {
         name="Locations"
         component={LocationsStack}
         options={{
-          tabBarLabel: 'Locations',
+          tabBarLabel: 'Upcoming',
           tabBarIcon: ({color}) => (
-            <SvgXml xml={LocationIcon} width="100%" height="100%" />
+            <SvgXml xml={UpcomingIcon} width="100%" height="100%" />
           ),
         }}
       />
