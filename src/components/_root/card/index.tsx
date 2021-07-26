@@ -16,7 +16,7 @@ function renderEpisodeInfo(item: any) {
   );
 }
 
-function renderCharacterInfo(item: any) {
+function renderRocketInfo(item: any) {
   return (
     <View style={styles.info}>
       <Text style={styles.headerTitle}>{item?.name}</Text>
@@ -47,7 +47,7 @@ function index({item, navigation, navigationRoute}: Props) {
         )}
 
         {navigationRoute === 'Episode' && renderEpisodeInfo(item)}
-        {navigationRoute === 'Character' && renderCharacterInfo(item)}
+        {navigationRoute === 'Rocket' && renderRocketInfo(item)}
         {navigationRoute === 'Location' && renderLocationInfo(item)}
       </TouchableOpacity>
     </View>

@@ -16,7 +16,7 @@ function episodeDetail(item: any) {
     </View>
   );
 }
-function characterDetail(item: any) {
+function rocketDetail(item: any) {
   const dimensions = Dimensions.get('window');
   const imageHeight = Math.round((dimensions.width * 9) / 16);
   const imageWidth = dimensions.width;
@@ -31,12 +31,17 @@ function characterDetail(item: any) {
 
       <Text style={styles.text}>{item?.name} </Text>
       <View style={{justifyContent: 'center'}}>
-        <Text>Status: {item?.status} </Text>
-        <Text>Species: {item?.species} </Text>
-        <Text>Type: {item?.type} </Text>
-        <Text>Gender: {item?.gender} </Text>
-        <Text>Origin: {item?.origin?.name} </Text>
-        <Text>Location: {item?.location?.name} </Text>
+        <Text>type: {item?.type} </Text>
+        <Text>Active: {item?.active} </Text>
+        <Text>First Flight: {item?.first_flight} </Text>
+        <Text>Stages: {item?.stages} </Text>
+        <Text>Success Rate: {item?.success_rate_pct} </Text>
+        <Text>Country: {item?.country} </Text>
+        <Text>Company: {item?.company} </Text>
+        <Text>Cost Per Launch: {item?.cost_per_launch} </Text>
+        <Text>Boosters: {item?.boosters} </Text>
+        <Text>Description: {item?.description} </Text>
+        <Text>Height: {item?.height.meters} </Text>
       </View>
     </View>
   );
@@ -56,7 +61,7 @@ function index({route, item}: Props) {
   return (
     <>
       {route === 'Episode' && episodeDetail(item)}
-      {route === 'Character' && characterDetail(item)}
+      {route === 'Rocket' && rocketDetail(item)}
       {route === 'Location' && locationDetail(item)}
     </>
   );

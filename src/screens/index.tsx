@@ -9,8 +9,8 @@ import {TrendingIcon, PastIcon, UpcomingIcon} from '../_icons';
 
 import EpisodesScreen from './episodes';
 import EpisodeScreen from './episode';
-import CharactersScreen from './characters';
-import CharacterScreen from './character';
+import RocketsScreen from './rockets';
+import RocketScreen from './rocket';
 import LocationsScreen from './locations';
 import LocationScreen from './location';
 
@@ -37,10 +37,10 @@ const EpisodesStack = () => {
     </Stack.Navigator>
   );
 };
-const CharactersStack = () => {
+const RocketsStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Characters"
+      initialRouteName="Rockets"
       screenOptions={{
         headerStyle: {
           backgroundColor: '#4AA0EC',
@@ -51,8 +51,8 @@ const CharactersStack = () => {
         },
         headerTitleAlign: 'center',
       }}>
-      <Stack.Screen name="Characters" component={CharactersScreen} />
-      <Stack.Screen name="Character" component={CharacterScreen} />
+      <Stack.Screen name="Rockets" component={RocketsScreen} />
+      <Stack.Screen name="Rocket" component={RocketScreen} />
     </Stack.Navigator>
   );
 };
@@ -91,7 +91,7 @@ const CapsulesScreen = () => {
       />
       <Tab.Screen
         name="Characters"
-        component={CharactersStack}
+        component={RocketsStack}
         options={{
           tabBarLabel: 'Trending',
           tabBarIcon: ({color}) => (
@@ -117,7 +117,7 @@ export default function IndexScreen() {
   return (
     <Drawer.Navigator initialRouteName="Episode">
       <Drawer.Screen name="Capsules" component={CapsulesScreen} />
-      <Drawer.Screen name="Cores" component={CharactersStack} />
+      <Drawer.Screen name="Rockets" component={RocketsStack} />
       <Drawer.Screen name="Launches" component={LocationsStack} />
     </Drawer.Navigator>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {RocketsProvider} from '../../components/_context/rockets';
-import Characters from '../../components/characters';
+import Rockets from '../../components/rockets';
 
 interface Props {
   navigation: any;
@@ -11,7 +11,7 @@ interface Props {
 function index({navigation, route}: Props) {
   return (
     <RocketsProvider>
-      <Characters navigation={navigation} route={route} />
+      <Rockets navigation={navigation} route={route} />
     </RocketsProvider>
   );
 }
