@@ -7,10 +7,10 @@ interface Props {
   navigationRoute?: string;
 }
 
-function renderEpisodeInfo(item: any) {
+function renderCapsuleInfo(item: any) {
   return (
     <View style={styles.info}>
-      <Text style={styles.headerTitle}>{item?.name}</Text>
+      <Text style={styles.headerTitle}>Status: {item?.status}</Text>
       <Text style={styles.subTitle}>Type: {item?.type}</Text>
     </View>
   );
@@ -46,7 +46,7 @@ function index({item, navigation, navigationRoute}: Props) {
           <Image source={{uri: `${item?.image}`}} style={styles.image} />
         )}
 
-        {navigationRoute === 'Episode' && renderEpisodeInfo(item)}
+        {navigationRoute === 'Capsule' && renderCapsuleInfo(item)}
         {navigationRoute === 'Rocket' && renderRocketInfo(item)}
         {navigationRoute === 'Location' && renderLocationInfo(item)}
       </TouchableOpacity>

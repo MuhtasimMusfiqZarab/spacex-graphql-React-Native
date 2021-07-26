@@ -26,7 +26,7 @@ function index({navigation, route}: Props) {
             return (
               <Card
                 navigation={navigation}
-                navigationRoute="Episode"
+                navigationRoute="Capsule"
                 item={item}
               />
             );

@@ -6,13 +6,15 @@ interface Props {
   route: string;
 }
 
-function episodeDetail(item: any) {
+function capsuleDetail(item: any) {
   return (
     <View style={styles.containerMiddle}>
-      <Text style={styles.text}>{item.name} </Text>
-      <Text>Aired on: {item?.air_date} </Text>
-      <Text>Episode: {item?.episode} </Text>
-      <Text>Total Characters: {item?.characters?.length} </Text>
+      <Text style={styles.text}>{item.id} </Text>
+      <Text>Landings: {item?.landings} </Text>
+      <Text>Original Launch: {item?.original_launch} </Text>
+      <Text>Reuse Count: {item?.reuse_count} </Text>
+      <Text>Status: {item?.status} </Text>
+      <Text>Type: {item?.type} </Text>
     </View>
   );
 }
@@ -60,7 +62,7 @@ function locationDetail(item: any) {
 function index({route, item}: Props) {
   return (
     <>
-      {route === 'Episode' && episodeDetail(item)}
+      {route === 'Capsule' && capsuleDetail(item)}
       {route === 'Rocket' && rocketDetail(item)}
       {route === 'Location' && locationDetail(item)}
     </>
