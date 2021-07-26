@@ -12,12 +12,6 @@ import CapsuleScreen from './capsule';
 import RocketsScreen from './rockets';
 import RocketScreen from './rocket';
 
-import PastLaunchesScreen from './locations';
-import PastLauncheScreen from './location';
-
-import FutureLaunchesScreen from './locations';
-import FutureLaunchScreen from './location';
-
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
