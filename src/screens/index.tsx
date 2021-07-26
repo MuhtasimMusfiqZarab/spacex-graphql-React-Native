@@ -7,8 +7,8 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {SvgXml} from 'react-native-svg';
 import {TrendingIcon, PastIcon, UpcomingIcon} from '../_icons';
 
-import EpisodesScreen from './episodes';
-import EpisodeScreen from './episode';
+import EpisodesScreen from './capsules';
+import CapsuleScreen from './capsule';
 import RocketsScreen from './rockets';
 import RocketScreen from './rocket';
 import LocationsScreen from './locations';
@@ -33,7 +33,7 @@ const EpisodesStack = () => {
         headerTitleAlign: 'center',
       }}>
       <Stack.Screen name="Episodes" component={EpisodesScreen} />
-      <Stack.Screen name="Episode" component={EpisodeScreen} />
+      <Stack.Screen name="Episode" component={CapsuleScreen} />
     </Stack.Navigator>
   );
 };
