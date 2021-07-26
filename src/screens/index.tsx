@@ -7,36 +7,21 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {SvgXml} from 'react-native-svg';
 import {TrendingIcon, PastIcon, UpcomingIcon} from '../_icons';
 
-import EpisodesScreen from './capsules';
+import CapsulesScreen from './capsules';
 import CapsuleScreen from './capsule';
 import RocketsScreen from './rockets';
 import RocketScreen from './rocket';
-import LocationsScreen from './locations';
-import LocationScreen from './location';
+
+import PastLaunchesScreen from './locations';
+import PastLauncheScreen from './location';
+
+import FutureLaunchesScreen from './locations';
+import FutureLaunchScreen from './location';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-const EpisodesStack = () => {
-  return (
-    <Stack.Navigator
-      initialRouteName="Episodes"
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#ee7168',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-        headerTitleAlign: 'center',
-      }}>
-      <Stack.Screen name="Episodes" component={EpisodesScreen} />
-      <Stack.Screen name="Episode" component={CapsuleScreen} />
-    </Stack.Navigator>
-  );
-};
 const RocketsStack = () => {
   return (
     <Stack.Navigator
@@ -56,32 +41,12 @@ const RocketsStack = () => {
     </Stack.Navigator>
   );
 };
-const LocationsStack = () => {
-  return (
-    <Stack.Navigator
-      initialRouteName="Locations"
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: '#4AA0EC',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-        headerTitleAlign: 'center',
-      }}>
-      <Stack.Screen name="Locations" component={LocationsScreen} />
-      <Stack.Screen name="Location" component={LocationScreen} />
-    </Stack.Navigator>
-  );
-};
-
-const CapsulesScreen = () => {
+const LaunchesTabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Episodes"
-        component={EpisodesStack}
+        name="Past"
+        component={RocketsStack}
         options={{
           tabBarLabel: 'Past',
           tabBarIcon: ({color}) => (
@@ -89,19 +54,10 @@ const CapsulesScreen = () => {
           ),
         }}
       />
+
       <Tab.Screen
-        name="Characters"
+        name="Upcoming"
         component={RocketsStack}
-        options={{
-          tabBarLabel: 'Trending',
-          tabBarIcon: ({color}) => (
-            <SvgXml xml={TrendingIcon} width="100%" height="80%" />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Locations"
-        component={LocationsStack}
         options={{
           tabBarLabel: 'Upcoming',
           tabBarIcon: ({color}) => (
@@ -113,12 +69,32 @@ const CapsulesScreen = () => {
   );
 };
 
+const CapsulesStack = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Capsules"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#4AA0EC',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+        headerTitleAlign: 'center',
+      }}>
+      <Stack.Screen name="Capsules" component={CapsulesScreen} />
+      <Stack.Screen name="Capsule" component={CapsuleScreen} />
+    </Stack.Navigator>
+  );
+};
+
 export default function IndexScreen() {
   return (
     <Drawer.Navigator initialRouteName="Episode">
-      <Drawer.Screen name="Capsules" component={CapsulesScreen} />
+      <Drawer.Screen name="Capsules" component={CapsulesStack} />
       <Drawer.Screen name="Rockets" component={RocketsStack} />
-      <Drawer.Screen name="Launches" component={LocationsStack} />
+      <Drawer.Screen name="Launches" component={LaunchesTabNavigator} />
     </Drawer.Navigator>
   );
 }

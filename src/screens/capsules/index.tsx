@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {EpisodesProvider} from '../../components/_context/episodes';
-import Episodes from '../../components/episodes';
+import {CapsulesProvider} from 'components/_context/capsules';
+import Capsules from 'components/capsules';
 
 interface Props {
   navigation: any;
@@ -10,9 +10,9 @@ interface Props {
 
 function index({navigation, route}: Props) {
   return (
-    <EpisodesProvider>
-      <Episodes navigation={navigation} route={route} />
-    </EpisodesProvider>
+    <CapsulesProvider>
+      <Capsules navigation={navigation} route={route} />
+    </CapsulesProvider>
   );
 }
 
