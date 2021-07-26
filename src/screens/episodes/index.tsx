@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {EpisodesProvider} from '../../_context/episodes';
+import {EpisodesProvider} from '../../components/_context/episodes';
 import Episodes from '../../components/episodes';
 
 interface Props {

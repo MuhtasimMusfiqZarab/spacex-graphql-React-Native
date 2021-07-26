@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {FlatList} from 'react-native';
 import {Container, Card, Searchbar} from '../_root';
-import {useEpisodes} from '../../_context/episodes';
+import {useEpisodes} from '../_context/episodes';
 
 interface Props {
   navigation: any;

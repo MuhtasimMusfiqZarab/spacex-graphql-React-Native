@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {LocationsProvider} from '../../_context/locations';
+import {LocationsProvider} from '../../components/_context/locations';
 import Locations from '../../components/locations';
 
 interface Props {

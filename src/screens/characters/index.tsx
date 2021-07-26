@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {RocketsProvider} from '../../_context/rockets';
+import {RocketsProvider} from '../../components/_context/rockets';
 import Characters from '../../components/characters';
 
 interface Props {

@@ -11,7 +11,7 @@ function renderEpisodeInfo(item: any) {
   return (
     <View style={styles.info}>
       <Text style={styles.headerTitle}>{item?.name}</Text>
-      <Text style={styles.subTitle}>Aired On: {item?.air_date}</Text>
+      <Text style={styles.subTitle}>Type: {item?.type}</Text>
     </View>
   );
 }
@@ -20,8 +20,8 @@ function renderCharacterInfo(item: any) {
   return (
     <View style={styles.info}>
       <Text style={styles.headerTitle}>{item?.name}</Text>
-      <Text style={styles.subTitle}>Species: {item?.species}</Text>
-      <Text style={styles.subTitle}>Status: {item?.status}</Text>
+      <Text style={styles.subTitle}>First Flight: {item?.first_flight}</Text>
+      <Text style={styles.subTitle}>Type: {item?.type}</Text>
     </View>
   );
 }

@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import {useLazyQuery} from '@apollo/client';
 
-import getCharacters from '../api/query/get-characters';
+import getCharacters from '../../api/query/get-characters';
 
 const CharactersContext = createContext({
   characters: null,

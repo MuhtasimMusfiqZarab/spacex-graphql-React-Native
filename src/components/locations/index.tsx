@@ -3,7 +3,7 @@ import {FlatList} from 'react-native';
 
 import {Container, Card, Searchbar, Dropdown} from '../_root';
 
-import {useLocations} from '../../_context/locations';
+import {useLocations} from '../_context/locations';
 
 interface Props {
   navigation: any;

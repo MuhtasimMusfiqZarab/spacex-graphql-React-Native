@@ -3,7 +3,7 @@ import {FlatList} from 'react-native';
 
 import {Container, Card, Searchbar, Dropdown} from '../_root';
 
-import {useRockets} from '../../_context/rockets';
+import {useRockets} from '../_context/rockets';
 
 interface Props {
   navigation: any;
@@ -12,16 +12,6 @@ interface Props {
 
 function index({navigation, route}: Props) {
   const {rockets, loading} = useRockets();
-
-  // const changeOffset = () => {
-  //   if (!loading && currentPage < totalPages) {
-  //     setPage(currentPage + 1);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getMoreCharacters();
-  // }, []);
 
   console.log('This are the rockets', rockets);
 

@@ -1,7 +1,7 @@
 import React, {createContext, useContext, ReactNode} from 'react';
 import {useQuery} from '@apollo/client';
 
-import GET_ROCKETS from '../api/query/rockets';
+import GET_ROCKETS from '../../api/query/rockets';
 
 const RocketsContext = createContext({
   rockets: null,
