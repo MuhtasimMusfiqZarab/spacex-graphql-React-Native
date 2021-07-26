@@ -1,7 +1,7 @@
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
   plugins: [
-    'import-graphql',
+    ['module:react-native-dotenv'],
     [
       'module-resolver',
       {
@@ -9,5 +9,6 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.ios.js', '.android.js', '.js', '.json'],
       },
     ],
+    ['import-graphql'],
   ],
 };

@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import {useLazyQuery} from '@apollo/client';
 
-import getLocations from '../api/query/get-locations';
+import getLocations from '../api/query/histories';
 
 const LocationsContext = createContext({
   locations: null,

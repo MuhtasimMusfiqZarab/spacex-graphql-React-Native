@@ -3,7 +3,7 @@ import {FlatList} from 'react-native';
 
 import {Container, Card, Searchbar, Dropdown} from '../_root';
 
-import {useCharacters} from '../../_context/characters';
+import {useRockets} from '../../_context/rockets';
 
 interface Props {
   navigation: any;
@@ -11,54 +11,29 @@ interface Props {
 }
 
 function index({navigation, route}: Props) {
-  const {
-    characters,
-    setPage,
-    getMoreCharacters,
-    loading,
-    searchTerm,
-    setSearchTerm,
-    totalPages,
-    currentPage,
-    value,
-    setValue,
-  } = useCharacters();
+  const {rockets, loading} = useRockets();
 
-  const [items, setItems] = useState([
-    {label: 'Alive', value: 'Alive'},
-    {label: 'unknown', value: 'unknown'},
-    {label: 'Dead', value: 'Dead'},
-  ]);
+  // const changeOffset = () => {
+  //   if (!loading && currentPage < totalPages) {
+  //     setPage(currentPage + 1);
+  //   }
+  // };
 
-  const changeOffset = () => {
-    if (!loading && currentPage < totalPages) {
-      setPage(currentPage + 1);
-    }
-  };
+  // useEffect(() => {
+  //   getMoreCharacters();
+  // }, []);
 
-  useEffect(() => {
-    getMoreCharacters();
-  }, []);
+  console.log('This are the rockets', rockets);
 
   return (
     <Container>
       <>
-        <Searchbar
-          term={searchTerm}
-          onTermChange={(newValue: string) => setSearchTerm(newValue)}
-        />
-        <Dropdown
-          items={items}
-          setItems={setItems}
-          value={value}
-          setValue={setValue}
-        />
         <FlatList
-          data={characters}
+          data={rockets}
           showsVerticalScrollIndicator={false}
-          onEndReached={() => {
-            changeOffset();
-          }}
+          // onEndReached={() => {
+          //   changeOffset();
+          // }}
           keyExtractor={character => character?.id}
           renderItem={({item}) => {
             return (
